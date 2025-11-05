@@ -32,3 +32,26 @@ Tugas 7:
 
 6. Jelaskan konsep "hot reload" di Flutter dan bagaimana bedanya dengan "hot restart".
     Hot reload menyimpan perubahan kode dan memperbarui UI tanpa mengulang seluruh aplikasi. Sedangkan hot restart mengulang aplikasi dari awal (data dan state hilang).
+
+Tugas 8:
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+- Navigator.push() menambahkan halaman baru di atas halaman sebelumnya di stack navigasi. Pengguna masih bisa kembali ke halaman sebelumnya dengan tombol back.
+- Navigator.pushReplacement() menggantikan halaman saat ini dengan halaman baru. Halaman lama dihapus dari stack, jadi pengguna tidak bisa kembali ke halaman sebelumnya.
+- Pada aplikasi bolapedia, Navigator.push() cocok digunakan ketika pengguna berpindah ke halaman detail produk agar bisa kembali ke halaman katalog. Sementara Navigator.pushReplacement() cocok untuk navigasi seperti setelah login, karena kita tidak ingin pengguna kembali ke halaman login lagi.
+
+
+2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+- Scaffold digunakan di setiap halaman untuk memberikan struktur dasar (AppBar, Drawer, dan body).
+- AppBar menampilkan judul halaman atau nama toko, sehingga pengguna selalu tahu di mana mereka berada.
+- Drawer berisi menu navigasi untuk berpindah antar halaman.
+Dengan struktur ini, semua halaman memiliki tampilan yang seragam dan mudah digunakan tanpa harus menulis ulang komponen layout utama di setiap halaman.
+
+3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+- Padding digunakan untuk memberi jarak antar elemen agar tampilan form lebih rapi dan mudah dibaca. Contohnya di ProductFormPage, setiap TextFormField seperti “Nama Produk” dan “Harga” dibungkus dengan Padding(padding: EdgeInsets.all(8.0)) sehingga elemen tidak menempel satu sama lain.
+
+- SingleChildScrollView digunakan agar form bisa scroll jika isinya panjang. Pada ProductFormPage, seluruh elemen form (nama, harga, deskripsi, kategori, dst.) dimasukkan ke dalam SingleChildScrollView sehingga pengguna tetap bisa mengakses semua field meskipun layar kecil.
+
+- ListView digunakan di LeftDrawer untuk menampilkan daftar menu seperti Home, Add Product, dan View Products. Dengan ListView, menu tetap rapi dan bisa discroll jika jumlah item bertambah.
+
+4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+- Untuk saat ini, saya masih menggunakan warna dasar bawaan Flutter seperti indigo dan putih agar tampilan aplikasi tetap bersih dan mudah dibaca. Warna ini digunakan di beberapa elemen seperti AppBar, tombol ElevatedButton, dan DrawerHeader untuk menjaga konsistensi tampilan antarhalaman. Walaupun belum mencerminkan brand final Bolapedia secara spesifik, warna ini memberikan dasar tema yang seragam. Ke depannya, tema warna dapat disesuaikan lagi agar lebih mencerminkan identitas visual toko, misalnya dengan menambahkan custom color palette sesuai logo atau karakter toko.
