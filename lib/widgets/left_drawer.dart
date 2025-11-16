@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bolapedia_app/screens/menu.dart';
 import 'package:bolapedia_app/screens/product_form.dart';
-
+import 'package:bolapedia_app/screens/product_entry_list.dart';
+import 'package:bolapedia_app/screens/login.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -66,8 +67,23 @@ ListTile(
             leading: const Icon(Icons.article_outlined),
             title: const Text('View Products'),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductEntryListPage()),
+              );
             }
-          )
+          ),
+                  ListTile(
+  leading: const Icon(Icons.exit_to_app),
+  title: const Text('Logout'),
+  onTap: () {
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const LoginPage(),
+        ));
+  },
+        )
         ],
       ),
     );
