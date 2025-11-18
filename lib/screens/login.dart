@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:bolapedia_app/screens/register.dart';
+import 'package:bolapedia_app/theme/app_theme.dart';
 void main() {
   runApp(const LoginApp());
 }
@@ -14,11 +15,7 @@ class LoginApp extends StatelessWidget {
   Widget build(BuildContext context) {  
     return MaterialApp(
       title: 'Login',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
-          .copyWith(secondary: Colors.blueAccent[400]),
-      ),
+      theme: AppTheme.light,
       home: const LoginPage(),
     );
   }

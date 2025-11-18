@@ -4,6 +4,7 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:bolapedia_app/screens/login.dart';
+import 'package:bolapedia_app/theme/app_theme.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Bolapedia',
         home: const LoginPage(),
+        theme: AppTheme.light,
       ),
     );
   }

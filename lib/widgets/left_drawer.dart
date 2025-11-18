@@ -12,32 +12,32 @@ Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
-decoration: BoxDecoration(
-    color: Colors.blue,
-  ),
-  child: Column(
-    children: [
-      Text(
-        'Bolapedia',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
-      Padding(padding: EdgeInsets.all(10)),
-      Text("Semua Perlengkapan Sepak Bola Ada Disini",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 15,
-            color: Colors.white,
-            fontWeight: FontWeight.normal,
-          ),
-      ),
-    ],
-  ),
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Bolapedia',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(10)),
+                Text("Semua Perlengkapan Sepak Bola Ada Disini",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
+                )
+              ],
+            ),
           ),
           ListTile(
   leading: const Icon(Icons.home_outlined),

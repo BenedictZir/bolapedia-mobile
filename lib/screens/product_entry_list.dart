@@ -7,7 +7,8 @@ import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 class ProductEntryListPage extends StatefulWidget {
-  const ProductEntryListPage({super.key});
+  final bool myOnly;
+  const ProductEntryListPage({super.key, this.myOnly = false});
 
   @override
   State<ProductEntryListPage> createState() => _ProductEntryListPageState();
@@ -18,10 +19,10 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
     // TODO: Replace the URL with your app's URL and don't forget to add a trailing slash (/)!
     // To connect Android emulator with Django on localhost, use URL http://10.0.2.2/
     // If you using chrome,  use URL http://localhost:8000
+    const baseUrl = 'http://localhost:8000';
+    final path = widget.myOnly ? '/json-mine/' : '/json/';
+    final response = await request.get('$baseUrl$path');
     
-    final response = await request.get('http://localhost:8000/json/');
-    
-    // Decode response to json format
     var data = response;
     
     // Convert json data to ProductEntry objects
@@ -39,7 +40,7 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('News Entry List'),
+        title: Text(widget.myOnly ? 'My Product Entries' : 'All Product Entries'),
       ),
       drawer: const LeftDrawer(),
       body: FutureBuilder(

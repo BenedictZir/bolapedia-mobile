@@ -26,8 +26,8 @@ class ProductDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product Detail'),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -78,11 +78,11 @@ class ProductDetailPage extends StatelessWidget {
                     children: [
                       Chip(
                         label: Text(product.category.toUpperCase()),
-                        backgroundColor: Colors.indigo.shade100,
-                        labelStyle: TextStyle(
+                        backgroundColor: const Color(0xFFDBEAFE), // blue100
+                        labelStyle: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          color: Colors.indigo.shade700,
+                          color: Color(0xFF1D4ED8), // blue700
                         ),
                       ),
                       Chip(
